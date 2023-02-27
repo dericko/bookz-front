@@ -4,7 +4,7 @@ import { useState, useEffect } from 'react';
 function App() {
   const [titles, setTitles] = useState([]);
   useEffect(() => {
-    fetch(`https://api.nytimes.com/svc/books/v3/lists.json?list=hardcover-fiction&api-key=${process.env.NYT_API_KEY}`)
+    fetch(`https://api.nytimes.com/svc/books/v3/lists.json?list=hardcover-fiction&api-key=${process.env.REACT_APP_NYT_BOOKS_API}`)
       .then(res => res.json())
       .then(json => {
         console.log(json.results)
