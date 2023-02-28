@@ -4,7 +4,7 @@ import { useState, useEffect } from 'react';
 function App() {
   const [titles, setTitles] = useState([]);
   useEffect(() => {
-    fetch(process.env.REACT_APP_NYT_BOOKS_API`https://bookz-back.onrender.com/books?api-key=${process.env.REACT_APP_INTERNAL_SECRET}`)
+    fetch(`https://bookz-back.onrender.com/api/books?token=${process.env.REACT_APP_INTERNAL_SECRET}`)
       .then(res => res.json())
       .then(json => {
         console.log(json.results)
